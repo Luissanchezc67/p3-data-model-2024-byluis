@@ -11,13 +11,13 @@ const result = await prisma.pacient.create({
         gender:"varon",
         record:"alergic aines"
         */
-    pacient: "Martha Vargas",
-    address: "Nou barris",
-    phonenum: "633871278",
-    DNIPass: "223002737",
-    edad: "64",
-    gender: "Women",
-    record: "alergic ibuprofeno",
+    pacient: "Luis Armas",
+    address: " Exaimple",
+    phonenum: "625789128",
+    DNIPass: "Y6789028K",
+    edad: "28",
+    gender: "men",
+    record: "alergic aines",
   }
 });
 
@@ -25,15 +25,15 @@ console.log("You created pacient:", result);
 
 const result1 = await prisma.services.create({
   data: {
-    service: "ALERGOLOGÍA",
+    /*service: "ALERGOLOGÍA",
     description:
       "Mediante pruebas cutáneas y una amplia batería de test sanguíneos, nuestros profesionales son capaces de diagnosticar hipersensibilidad a cualquier alimento o fármaco. Actualmente, gracias a las vacunas hipoalergénicas y a sofisticadas técnicas de desensibilización entre otros tratamientos, la mayoría de alergias de nuestros pacientes remiten en un corto período de tiempo.",
-    price: "$50",
+    price: "$50",*/
 
-    /*service: "ginecologia y obtetricia",
+    service: "ginecologia y obtetricia",
     description:
       "Nuestras instalaciones cuentan con varias salas de registro, tres salas de parto convencional instrumentado, una sala para parto respetado y dos quirófanos específicos para cesáreas programadas y urgentes, todos ellos equipados con la última tecnología.",
-    price: "$50" */
+    price: "$79" 
   }
 });
 
@@ -41,17 +41,17 @@ console.log("You created service:", result1);
 
 const result2 = await prisma.doctor.create({
     data: {
-        firstname: "Jose",
+    /*    firstname: "Jose",
         lastname:"Rodriguez",
         phone: "623234234",
         specialty:"ginecologia"
-  
-      /*
+  */
+      
         firstname: "Raul",
         lastname:"Salazar",
         phone: "678239102",
         specialty:"alergologia"
-        */
+        
     }
   });
   
