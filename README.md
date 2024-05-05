@@ -1,20 +1,37 @@
-# Modelo de Datos
+es un modelo de datos de los pacientes y servicios que ofrece la clinica medica se puede agregar cualquier tipo de servicio, con los pacientes los cuales tendran cada uno una historia clinica 
 
-En esta práctica hay que desarrollar el modelo de datos para una aplicación que resulte de tu interés. (No es necesario pensar en la autenticación aún, estudiaremos eso por separado.)
+# lanzar Base de Datos
+en schema.prisma se crean los modelos de las tablas que almacenaran los datos, para que el archivo dev.db se cree ejecutamos la siguiente linea de comnando en una consola 
 
-Se trata, como otras veces, de hacer un _fork_ de este repositorio y trabajar en él.
+bunx prisma db push 
 
-La solución del ejercicio debe ser un proyecto Javascript con:
-- El esquema de Prisma (`schema.prisma`).
-- La configuración para una base de datos (con `docker-compose.yml`).
-- Rellenado con unos pocos datos de prueba.
-- Scripts en Typescript de demostración que hacen algunas cosas con los datos.
-- Documentación sobre cómo lanzar la base de datos y usar los scripts de demostración (sustituyendo este mismo README).
+el cual tendria que salir esto una vez hecho
 
-## Esquema
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "dev.db" at "file:./dev.db"
 
-El esquema debe tener almenos 3 entidades, pero no hay límite superior. Empieza siempre por definir las entidades más importantes, y asegúrate de que las relaciones cumplen con las necesidades que has planteado (nunca hay una única solución, cada solución tienes sus ventajas e inconvenientes, simplemente hay que ser conscientes de ellos). Luego añade entidades para hacer crecer el modelo. No intentes hacerlo todo de golpe (a no ser que ya tengas experiencia).
+SQLite database dev.db created at file:./dev.db
 
-## Rellenado de datos de prueba
+🚀  Your database is now in sync with your Prisma schema. Done in 17ms
 
-Para crear los datos iniciales con los que poder hacer algo al principio se puede usar cualquier mecanismo que automatice la inserción. Se recomienda mirar la documentación sobre como usar `seed.ts` en Prisma, que es una manera semi-estandarizada.
+Running generate... (Use --skip-generate to skip the generators)
+[0.32ms] ".env"
+bun add v1.1.3 (2615dc74)
+
+ installed @prisma/client@5.13.0
+
+ 1 package installed [1.96s]
+
+✔ Generated Prisma Client (v5.13.0) to ./node_modules/@prisma/client in 78ms
+
+## ejecutar los scripts
+ bun src/xxxxx.ts
+ 
+ xxxxx = reemplace el nombre de cada script
+
+con el comando bun  que ejecutaremos en la consola cada script para ingresar desde el paciente, el doctor y los servicios que ofrece esta clinica medica
+
+###  Rellenado de datos de prueba
+
+ejecutando el comando bunx prisma studio podemos visualizar los datos con mayor orden, y hacer pruebas
