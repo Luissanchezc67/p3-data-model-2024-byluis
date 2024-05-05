@@ -10,7 +10,15 @@ const result = await prisma.pacient.create({
         edad: "24",
         gender:"varon",
         record:"alergic aines"
-
+        /*
+         pacient: "Ariana Sanchez",
+         address: "Nou barris",
+         phonenum: "633871278",
+         DNIPass: "Y7881993E",
+         edad: "29",
+         gender: "Women",
+         record: "alergic paracetamol"
+        */
     }
 })
 

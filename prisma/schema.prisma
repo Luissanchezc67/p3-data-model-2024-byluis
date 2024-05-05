@@ -12,7 +12,7 @@ datasource db {
 
 
 model Pacient {
-  id String @id @default(uuid()) //el id de la tabla paciente
+  pacientId Int @id @default(autoincrement())//el id de la tabla paciente
   pacient String
   address String
   phonenum String
@@ -25,24 +25,24 @@ model Pacient {
 }
 
 model ClinicHistory{
-  id String @id @default(uuid()) //el id de la tabla historiaclinica
+  clinichistId Int @id @default(autoincrement()) //el id de la tabla historiaclinica
   date DateTime
 
-  pacientId String
-  pacient Pacient @relation(fields: [pacientId], references: [id])
+  pacientId Int
+  pacient Pacient @relation(fields: [pacientId], references: [pacientId])
 
-  doctorId String
-  doctor Doctor @relation(fields: [doctorId],references: [id])
+  doctorId Int
+  doctor Doctor @relation(fields: [doctorId],references: [doctorId])
 
-  serviceid String
-  service Services @relation(fields: [serviceid], references: [id])
+  serviceId Int
+  service Services @relation(fields: [serviceId], references: [serviceId])
 
   detail detailPacient[]
 
 }
 
 model Doctor{
-  id String @id @default(uuid())
+  doctorId Int @id @default(autoincrement())
   firstname String
   lastname String
   phone String
@@ -52,7 +52,7 @@ model Doctor{
 }
 
 model Services {
-  id String @id @default(uuid())
+  serviceId Int @id @default(autoincrement())
   service String
   description String
   price String
@@ -62,14 +62,14 @@ model Services {
 }
 
 model detailPacient {
-  id String @id @default(uuid())
+  detailpacientId Int @id @default(autoincrement())
   payment String
   state String
 
-  serviceid String
-  service Services @relation(fields: [serviceid], references: [id])
+  serviceId Int
+  service Services @relation(fields: [serviceId], references: [serviceId])
 
-  clinichistid String
-  clinichist ClinicHistory @relation(fields: [clinichistid], references: [id])
+  clinichistId Int
+  clinichist ClinicHistory @relation(fields: [clinichistId], references: [clinichistId])
 
 }
